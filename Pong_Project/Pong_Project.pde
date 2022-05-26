@@ -26,15 +26,31 @@ color backSelect;
 int mode;
 final int intro = 0;
 final int game = 1;
-final int game2 = 2;
-final int options = 3;
-final int pause = 4;
-final int gameOver = 5;
+final int options = 2;
+final int pause = 3;
+final int gameOver = 4;
+
+float leftX, leftY, rightX, rightY, leftD, rightD;
+float x, y, d;
+
+boolean wkey, skey, upkey, downkey;
 
 void setup() {
   size(1000, 800);
   mode = intro;
   textAlign(CENTER, CENTER);
+  
+  leftX = 0;
+  leftY = 400;
+  leftD = 300;
+  rightX = 1000;
+  rightY = 400;
+  rightD = 300;
+  x = 500;
+  y = 400;
+  d = 100;
+  
+  wkey = skey = upkey = downkey = false;
 }
 
 void draw() {
@@ -42,8 +58,6 @@ void draw() {
     intro();
   } else if (mode == game) {
     game();
-  } else if (mode == game2) {
-    game2();
   } else if (mode == options) {
     options();
   } else if (mode == pause) {
