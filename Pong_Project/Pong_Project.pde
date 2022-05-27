@@ -30,8 +30,11 @@ final int options = 2;
 final int pause = 3;
 final int gameOver = 4;
 
+int score, score2, timer, timerF;
+
 float leftX, leftY, rightX, rightY, leftD, rightD;
 float x, y, d;
+float vx, vy;
 
 boolean wkey, skey, upkey, downkey;
 
@@ -50,7 +53,15 @@ void setup() {
   y = 400;
   d = 100;
   
+  score = 0;
+  score2 = 0;
+  timer = 5;
+  timerF = 300;
+  
   wkey = skey = upkey = downkey = false;
+  
+  vx = -5;
+  vy = 0;
 }
 
 void draw() {
