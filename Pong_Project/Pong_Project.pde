@@ -19,16 +19,15 @@ color tactile = color(209, 199, 107);
 
 color singleSelect;
 color multiSelect;
-color optionsSelect;
 color quitSelect;
-color backSelect;
+color introSelect;
+color rematchSelect;
 
 int mode;
 final int intro = 0;
 final int game = 1;
-final int options = 2;
-final int pause = 3;
-final int gameOver = 4;
+final int pause = 2;
+final int gameOver = 3;
 
 int score, score2, timer, timerF;
 
@@ -69,8 +68,6 @@ void draw() {
     intro();
   } else if (mode == game) {
     game();
-  } else if (mode == options) {
-    options();
   } else if (mode == pause) {
     pause();
   } else if (mode == gameOver) {
@@ -89,18 +86,8 @@ void draw() {
     multiSelect = black;
   }
   if (mouseX > 400 && mouseX < 600 && mouseY > 600 && mouseY < 650) {
-    optionsSelect = glow;
-  } else {
-    optionsSelect = black;
-  }
-  if (mouseX > 400 && mouseX < 600 && mouseY > 700 && mouseY < 750) {
     quitSelect = glow;
   } else {
     quitSelect = black;
-  }
-  if (mouseX > 50 && mouseX < 250 && mouseY > 50 && mouseY < 100) {
-    backSelect = glow;
-  } else {
-    backSelect = black;
   }
 }
