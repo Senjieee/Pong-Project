@@ -21,9 +21,11 @@ void intro() {
 void introClicks() {
   if (mouseX > 400 && mouseX < 600 && mouseY > 400 && mouseY < 450) {
     mode = game;
+    AI = true;
   }
   if (mouseX > 400 && mouseX < 600 && mouseY > 500 && mouseY < 550) {
     mode = game;
+    AI = false;
   }
   if (mouseX > 400 && mouseX < 600 && mouseY > 600 && mouseY < 650) {
     exit();

@@ -37,6 +37,8 @@ float vx, vy;
 
 boolean wkey, skey, upkey, downkey;
 
+boolean AI;
+
 void setup() {
   size(1000, 800);
   mode = intro;

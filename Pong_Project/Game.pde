@@ -18,8 +18,22 @@ void game() {
   if (wkey == true) leftY = leftY - 7;
   if (skey == true) leftY = leftY + 7;
   
-  if (upkey == true) rightY = rightY - 7;
-  if (downkey == true) rightY = rightY + 7;
+  if (AI == false) {
+    if (upkey == true) rightY = rightY - 7;
+    if (downkey == true) rightY = rightY + 7;
+  } 
+  if (AI == true) {
+    if (x < rightX) {
+      if (y > rightY) {
+        rightY = rightY + 7;
+      }
+      if (y < rightY) {
+        rightY = rightY - 7;
+      }
+    }
+  }
+    
+  
   
   fill(white);
   circle(x, y, d);
