@@ -1,6 +1,76 @@
 void intro() {
   background(brown);
   
+  fill(red);
+  circle(leftX2, leftY2, leftD);
+  fill(blue);
+  circle(rightX2, rightY2, rightD);
+  fill(white);
+  circle(x2, y2, d);
+  x2 = x2 + vx2;
+  y2 = y2 + vy2;
+  if (y2 <= d/2 || y2 >= height-d/2) {
+    vy2 = vy2 * -1;
+  }
+  if (y2 < 50) {
+    y2 = 50;
+  }
+  if (y2 > 750) {
+    y2 = 750;
+  }
+  
+  if(dist(leftX2, leftY2, x2, y2) < leftD/2 + d/2) {
+    vx2 = (x2 - leftX2)/13;
+    vy2 = (y2 - leftY2)/13;
+    z = random(10, 150);
+    z2 = random(10, 150);
+    z3 = random(10, 150);
+    z4 = random(10, 150);
+  }
+  if(dist(rightX2, rightY2, x2, y2) < rightD/2 + d/2) {
+    vx2 = (x2 - rightX2)/13;
+    vy2 = (y2 - rightY2)/13;
+    z = random(10, 150);
+    z2 = random(10, 150);
+    z3 = random(10, 150);
+    z4 = random(10, 150);
+  }
+  if(leftY2 < 0) {
+    leftY2 = 0;
+  }
+  if(leftY2 > 800) {
+    leftY2 = 800;
+  }
+  if(rightY2 < 0) {
+    rightY2 = 0;
+  }
+  if(rightY2 > 800) {
+    rightY2 = 800;
+  }
+  
+  if (x2 < rightX2) {
+      if (y2 + z > rightY2) {
+        rightY2 = rightY2 + 10;
+      }
+      if (y2 + z2 < rightY2) {
+        rightY2 = rightY2 - 10;
+      }
+    }
+  if (x2 > leftX2) {
+    if (y2 + z3 > leftY2) {
+      leftY2 = leftY2 + 10;
+    }
+    if (y2 + z4 < leftY2) {
+      leftY2 = leftY2 - 10;
+    }
+  }
+  if (x2 > leftX2) {
+    if (vx2 == (x2 - leftX2)/13) {
+    }
+  }
+  
+  //in progress
+  
   fill(darkBrown);
   strokeWeight(3);
   stroke(singleSelect);

@@ -32,8 +32,12 @@ final int gameOver = 3;
 int score, score2, timer, timerF;
 
 float leftX, leftY, rightX, rightY, leftD, rightD;
+float leftX2, leftY2, rightX2, rightY2;
 float x, y, d;
+float x2, y2;
 float vx, vy;
+float vx2, vy2;
+float z, z2, z3, z4;
 
 boolean wkey, skey, upkey, downkey;
 
@@ -50,9 +54,19 @@ void setup() {
   rightX = 1000;
   rightY = 400;
   rightD = 300;
+  leftX2 = 0;
+  leftY2 = random(0, 800);
+  rightX2 = 1000;
+  rightY2 = random(0, 800);
   x = 500;
   y = 400;
   d = 100;
+  x2 = 500;
+  y2 = 400;
+  z = random(10, 150);
+  z2 = random(10, 150);
+  z3 = random(10, 150);
+  z4 = random(10, 150);
   
   score = 0;
   score2 = 0;
@@ -63,6 +77,8 @@ void setup() {
   
   vx = -5;
   vy = 0;
+  vx2 = random(-5, 5);
+  vy2 = random(-5, 5);
 }
 
 void draw() {
