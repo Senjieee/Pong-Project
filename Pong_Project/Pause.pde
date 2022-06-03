@@ -6,4 +6,6 @@ void pause() {
 
 void pauseClicks() {
   mode = game;
+  bump.rewind();
+  bump.play();
 }

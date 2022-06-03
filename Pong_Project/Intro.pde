@@ -1,4 +1,5 @@
 void intro() {
+  theme.play();
   background(brown);
   
   fill(red);
@@ -14,26 +15,34 @@ void intro() {
   }
   if (y2 < 50) {
     y2 = 50;
+    bump.rewind();
+    bump.play();
   }
   if (y2 > 750) {
     y2 = 750;
+    bump.rewind();
+    bump.play();
   }
   
   if(dist(leftX2, leftY2, x2, y2) < leftD/2 + d/2) {
     vx2 = (x2 - leftX2)/13;
     vy2 = (y2 - leftY2)/13;
-    z = random(10, 150);
-    z2 = random(10, 150);
-    z3 = random(10, 150);
-    z4 = random(10, 150);
+    bump.rewind();
+    bump.play();
+    z = random(-150, 150);
+    z2 = random(-150, 150);
+    z3 = random(-150, 150);
+    z4 = random(-150, 150);
   }
   if(dist(rightX2, rightY2, x2, y2) < rightD/2 + d/2) {
     vx2 = (x2 - rightX2)/13;
     vy2 = (y2 - rightY2)/13;
-    z = random(10, 150);
-    z2 = random(10, 150);
-    z3 = random(10, 150);
-    z4 = random(10, 150);
+    bump.rewind();
+    bump.play();
+    z = random(-150, 150);
+    z2 = random(-150, 150);
+    z3 = random(-150, 150);
+    z4 = random(-150, 150);
   }
   if(leftY2 < 0) {
     leftY2 = 0;
@@ -47,7 +56,6 @@ void intro() {
   if(rightY2 > 800) {
     rightY2 = 800;
   }
-  
   if (x2 < rightX2) {
       if (y2 + z > rightY2) {
         rightY2 = rightY2 + 10;
@@ -56,20 +64,15 @@ void intro() {
         rightY2 = rightY2 - 10;
       }
     }
-  if (x2 > leftX2) {
-    if (y2 + z3 > leftY2) {
-      leftY2 = leftY2 + 10;
-    }
-    if (y2 + z4 < leftY2) {
-      leftY2 = leftY2 - 10;
-    }
-  }
-  if (x2 > leftX2) {
-    if (vx2 == (x2 - leftX2)/13) {
-    }
-  }
   
-  //in progress
+    if (x2 > leftX2) {
+      if (y2 + z3 > leftY2) {
+        leftY2 = leftY2 + 10;
+      }
+      if (y2 + z4 < leftY2) {
+        leftY2 = leftY2 - 10;
+      }
+    }
   
   fill(darkBrown);
   strokeWeight(3);
@@ -92,10 +95,14 @@ void introClicks() {
   if (mouseX > 400 && mouseX < 600 && mouseY > 400 && mouseY < 450) {
     mode = game;
     AI = true;
+    coin.rewind();
+    coin.play();
   }
   if (mouseX > 400 && mouseX < 600 && mouseY > 500 && mouseY < 550) {
     mode = game;
     AI = false;
+    coin.rewind();
+    coin.play();
   }
   if (mouseX > 400 && mouseX < 600 && mouseY > 600 && mouseY < 650) {
     exit();

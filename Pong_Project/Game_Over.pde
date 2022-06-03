@@ -57,6 +57,8 @@ void gameOver() {
 void gameOverClicks() {
   if (mouseX > 280 && mouseX < 480 && mouseY > 550 && mouseY < 600) {
     mode = intro;
+    bump.rewind();
+    bump.play();
     leftX = 0;
     leftY = 400;
     leftD = 300;
@@ -79,6 +81,8 @@ void gameOverClicks() {
   }
   if (mouseX > 520 && mouseX < 720 && mouseY > 550 && mouseY < 600) {
     mode = game;
+    coin.rewind();
+    coin.play();
     leftX = 0;
     leftY = 400;
     leftD = 300;
